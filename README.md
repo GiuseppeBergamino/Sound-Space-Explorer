@@ -8,7 +8,7 @@ SSE is an auditory augmented reality teaching system that lets students explore 
 * **Headphones** (stereo, over-ear preferred).
 * *(Optional)* **Head-tracker** (ESP32/IMU or [similar](https://x-io.co.uk/x-imu3/)) sending **MIDI CC** or **OSC**
 
-## Quick start (5 minutes — no head-tracker)
+## Quick start (no head-tracker)
 
 1. **Install** Reaper
 2. **Install** IEM Plugin Suite (VST3/AU). Restart Reaper so it scans the plugins.
@@ -41,7 +41,7 @@ You can run SSE with a head tracker that sends **orientation values** (Yaw/Pitch
 
 ## Pick a Soundscape
 
-The project includes groups (identifiable by different colors) of tracks for ready-to-use soudscapes:
+The project includes groups (marked with different colors) of tracks for ready-to-use soudscapes:
 
 * **River** — localization & figure–ground (cascades fixed, near droplets).
 * **Forest** — selective attention & masking (wind + intermittent birds).
@@ -52,10 +52,11 @@ The project includes groups (identifiable by different colors) of tracks for rea
 
 ## Teacher controls (in Reaper)
 
-* **Solo** a soundmark, **mute** layers, **adjust levels**.
-* **Modify orientation:** set Yaw/Pitch = 0° to discuss what students hear.
+* **Solo** a soundmark
+* **mute** layers
+* **adjust levels**
+* **Modify orientation:** change Yaw and Pitch to discuss what students hear.
 * **Change soundscape** instantly by soloing another group.
-* Keep **rotation → binaural** order in the FX chain.
 
 ## Safety & Inclusion
 
