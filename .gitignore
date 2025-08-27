@@ -1,0 +1,6 @@
+*.reapeaks
+*.rpp-bak
+/Cache*/
+Backups*/
+.DS_Store
+__MACOSX/
