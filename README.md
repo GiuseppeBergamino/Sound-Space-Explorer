@@ -4,7 +4,7 @@ SSE is an auditory augmented reality teaching system that lets students explore 
 ## What you need
 * **Laptop** (macOS/Windows)
 * **Reaper** (you can download it [here](https://www.reaper.fm/))
-* **IEM Plugin Suite** (you can download it [here](https://plugins.iem.at/)
+* **IEM Plugin Suite** (you can download it [here](https://plugins.iem.at/))
 * **Headphones** (stereo, over-ear preferred).
 * *(Optional)* **Head-tracker** (ESP32/IMU or [similar](https://x-io.co.uk/x-imu3/)) sending **MIDI CC** or **OSC**
 
@@ -23,14 +23,14 @@ SSE is an auditory augmented reality teaching system that lets students explore 
 
 You can run SSE with a head tracker that sends **orientation values** (Yaw/Pitch/Roll) many times per second.
 
-### A) OSC (recommended)
+#### A) OSC (recommended)
 
 1. Tracker sends to your laptop IP on **UDP port 9000** (example), addresses like `/yaw`,`/pitch` and `/roll` (floats −180°…+180°).
 2. In Reaper: *Preferences → Control/OSC/web → Add → OSC (listen on port 9000)* and **Enable input for control messages**.
 3. In **SceneRotator** (MASTER_OUT track), right-click **Yaw** → **Learn…** → move the tracker; repeat for **Pitch** and **Roll**.
 4. Press **OK** and test by turning your head.
 
-### B) MIDI CC
+#### B) MIDI CC
 
 1. Connect the tracker as a MIDI device (if this feature is available). *Preferences → MIDI Devices → enable input (and input for control messages).*
 2. In **SceneRotator**, right-click **Yaw** → **Learn…** → move the tracker (e.g., CC#1). Do the same for **Pitch** and **Roll**.
@@ -81,3 +81,25 @@ Tasks are **grounded in R. Murray Schafer’s ecological listening**.
 * **Too dense / loud:** lower the **Soundscape** group fader; mute layers; use teacher **Solo** to spotlight.
 * **OSC not learning:** check firewall and port; verify “Enable input for control messages”.
 
+## About the audio files (FLAC & WAV)
+
+This project ships with .flac audio to keep the download small. FLAC is **lossless**: it sounds identical to WAV, just uses less space. Reaper plays both FLAC and WAV natively.
+
+#### Replace or add your own sounds
+
+* **Quick swap** (same name): put your new file (FLAC or WAV) in the folder and keep the same filename as the original → Reaper will pick it up automatically at next open.
+* **New filename**: add the file to the right track, then mute/remove the old item. (If Reaper asks for missing media: “Browse for missing files…” and point to the file)
+
+#### Create your own soundscape
+
+* Duplicate a scene folder/track (e.g., “River → River_Custom”).
+* Drop in your sounds (beds/ambiences, point sources) and set their positions in the Ambisonics encoder.
+* Save the project (ideally with relative paths and media in the same folder).
+
+#### Recommended formats (simple defaults)
+
+* Sample rate: 48 kHz
+* Bit depth: 24-bit (16-bit also fine)
+* Channels: Mono for point sources (e.g., bird, bell), Stereo for ambience beds (e.g., river, wind)
+* Headroom: leave peaks around -1 dBFS to avoid clipping.
+* Length: keep layers reasonably short for classroom demos (you can loop beds if needed).
