@@ -25,7 +25,7 @@ You can run SSE with a head tracker that sends **orientation values** (yaw/pitch
 
 ### A) OSC (recommended)
 
-1. Tracker sends to your laptop IP on **UDP port 9000** (example), addresses like `/yaw` and `/pitch` (floats −180…+180).
+1. Tracker sends to your laptop IP on **UDP port 9000** (example), addresses like `/yaw`,`/pitch` and `/roll` (floats −180…+180).
 2. In Reaper: *Preferences → Control/OSC/web → Add → OSC (listen on port 9000)* and **Enable input for control messages**.
 3. In **SceneRotator**, right-click **Yaw** → **Learn…** → move the tracker; repeat for **Pitch** and **Roll**.
 4. Press **OK** and test by turning your head.
@@ -38,7 +38,7 @@ You can run SSE with a head tracker that sends **orientation values** (yaw/pitch
 
 > Tip: keep **Yaw** full-range (±180°), **Pitch** and **Roll** small (±90°). Re-center by briefly setting Yaw/Pitch/Roll to **0**.
 
-## Pick a soundscape
+## Pick a Soundscape
 
 The project includes groups of tracks for ready-to-use soudscapes:
 
@@ -56,9 +56,9 @@ The project includes groups of tracks for ready-to-use soudscapes:
 * **Change soundscape** instantly by soloing another group.
 * Keep **rotation → binaural** order in the FX chain.
 
-## Safety & inclusion
+## Safety & Inclusion
 
-* Start **quiet**; set a class maximum level.
+* Start **quiet**, set a class maximum level.
 * Only **gross motor** movements (simple head turns) are required—no fine motor skills, screens, or special lighting.
 * For students with limited mobility: use **smaller turns**, assisted positioning, or **role sharing** (navigator/reporter).
 * Personal headphones are fine.
