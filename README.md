@@ -91,16 +91,16 @@ This project ships with .flac audio to keep the download small. FLAC is **lossle
 * **Quick swap** (same name): put your new file (FLAC or WAV) in the folder and keep the same filename as the original → Reaper will pick it up automatically at next open.
 * **New filename**: add the file to the right track, then mute/remove the old item. (If Reaper asks for missing media: “Browse for missing files…” and point to the file)
 
-#### Create your own soundscape
+#### Create your own soundscapes
 
 * Duplicate a scene folder/track (e.g., “River → River_Custom”).
-* Drop in your sounds (beds/ambiences, point sources) and set their positions in the Ambisonics encoder.
+* Drop in your sounds and set their positions in the Ambisonics encoder.
 * Save the project (ideally with relative paths and media in the same folder).
 
-#### Recommended formats (simple defaults)
-
-* Sample rate: 48 kHz
-* Bit depth: 24-bit (16-bit also fine)
+#### Recommendations
+* Format: .flac or .wav
+* Sample rate: 44.1 kHz - 48 kHz
+* Bit depth: 16 or 24-bit
 * Channels: Mono for point sources (e.g., bird, bell), Stereo for ambience beds (e.g., river, wind)
-* Headroom: leave peaks around -1 dBFS to avoid clipping.
-* Length: keep layers reasonably short for classroom demos (you can loop beds if needed).
+* Headroom: leave peaks around -3 dB to avoid clipping.
+* Length: keep layers reasonably short for classroom demos (you can loop if needed).
