@@ -4,7 +4,7 @@ SSE is an auditory augmented reality teaching system that lets students explore 
 ## What you need
 * **Laptop** (macOS/Windows)
 * **Reaper** (you can download it [here](https://www.reaper.fm/))
-* **IEM Plugin Suite** (you can download it [here](https://www.reaper.fm/](https://plugins.iem.at/)
+* **IEM Plugin Suite** (you can download it [here](https://plugins.iem.at/)
 * **Headphones** (stereo, over-ear preferred).
 * *(Optional)* **Head-tracker** (ESP32/IMU or [similar](https://x-io.co.uk/x-imu3/)) sending **MIDI CC** or **OSC**
 
@@ -12,22 +12,22 @@ SSE is an auditory augmented reality teaching system that lets students explore 
 
 1. **Install** Reaper
 2. **Install** IEM Plugin Suite (VST3/AU). Restart Reaper so it scans the plugins.
-3. **Download** this repository and open `SSE_Reaper_Project.rpp` in Reaper.
+3. **Download** the repository and open `SSE_Reaper_Project.rpp` in Reaper.
 4. **Set audio device:** *Preferences → Audio → Device* (CoreAudio/ASIO), **48 kHz**, buffer **128–256** samples.
-5. **Choose one of the soundscapes**, pressing *solo* to the corrensponding one.
-6. **Move sound sorces** by interacting with the *Stereo Encoder* associated to each track
-7. **Simulate head turns** by interacting with the *SceneRotator* associated to each group
+5. **Choose one of the soundscapes**, pressing *solo* to the corrensponding group track.
+6. **Move sound sorces** by interacting with the *Stereo Encoder* associated to each sound source track
+7. **Simulate head turns** by interacting with the *SceneRotator* in the *MASTER_OUT* track
 
 
 ## Try the head-tracker (OSC or MIDI)
 
-You can run SSE with a head tracker that sends **orientation values** (yaw/pitch/roll) many times per second.
+You can run SSE with a head tracker that sends **orientation values** (Yaw/Pitch/Roll) many times per second.
 
 ### A) OSC (recommended)
 
-1. Tracker sends to your laptop IP on **UDP port 9000** (example), addresses like `/yaw`,`/pitch` and `/roll` (floats −180…+180).
+1. Tracker sends to your laptop IP on **UDP port 9000** (example), addresses like `/yaw`,`/pitch` and `/roll` (floats −180°…+180°).
 2. In Reaper: *Preferences → Control/OSC/web → Add → OSC (listen on port 9000)* and **Enable input for control messages**.
-3. In **SceneRotator**, right-click **Yaw** → **Learn…** → move the tracker; repeat for **Pitch** and **Roll**.
+3. In **SceneRotator** (MASTER_OUT track), right-click **Yaw** → **Learn…** → move the tracker; repeat for **Pitch** and **Roll**.
 4. Press **OK** and test by turning your head.
 
 ### B) MIDI CC
@@ -35,24 +35,25 @@ You can run SSE with a head tracker that sends **orientation values** (yaw/pitch
 1. Connect the tracker as a MIDI device (if this feature is available). *Preferences → MIDI Devices → enable input (and input for control messages).*
 2. In **SceneRotator**, right-click **Yaw** → **Learn…** → move the tracker (e.g., CC#1). Do the same for **Pitch** and **Roll**.
 3. If motion is too coarse, enable **Soft takeover** or scale the range in the Learn dialog.
+4. (Optional) **Install** the [ReaLearn](https://www.helgoboss.org/projects/realearn) plug-in to add more MIDI mapping customization
 
-> Tip: keep **Yaw** full-range (±180°), **Pitch** and **Roll** small (±90°). Re-center by briefly setting Yaw/Pitch/Roll to **0**.
+> Tip: keep **Yaw** full-range (±180°), **Pitch** and **Roll** small (±90°). Re-center by briefly setting Yaw/Pitch/Roll to **0°**.
 
 ## Pick a Soundscape
 
-The project includes groups of tracks for ready-to-use soudscapes:
+The project includes groups (identifiable by different colors) of tracks for ready-to-use soudscapes:
 
 * **River** — localization & figure–ground (cascades fixed, near droplets).
 * **Forest** — selective attention & masking (wind + intermittent birds).
 * **Lake** — width, reflections, depth.
 * **Peak** — sparse, distant sources (sense of space).
 
-**How to switch:** **Solo** the group you want to listent to or **Mute** the others. Each group has clearly named tracks(sound sources) you can raise/lower.
+**How to switch:** **Solo** the group you want to listent to or **Mute** the others. Each group has different tracks (sound sources) you can play with.
 
 ## Teacher controls (in Reaper)
 
 * **Solo** a soundmark, **mute** layers, **adjust levels**.
-* **Modify orientation:** set Yaw/Pitch = 0 to discuss what students hear.
+* **Modify orientation:** set Yaw/Pitch = 0° to discuss what students hear.
 * **Change soundscape** instantly by soloing another group.
 * Keep **rotation → binaural** order in the FX chain.
 
